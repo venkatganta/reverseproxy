@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProxy", "MyProxy\MyProxy.csproj", "{0391F8CD-CC80-4FDF-B9C7-EEFD5F7544EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProxy.Security", "MyProxy.Security\MyProxy.Security.csproj", "{CCEB61AE-EF63-4D1B-935A-D473EE621993}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProxy.Security", "MyProxy.Security\MyProxy.Security.csproj", "{CCEB61AE-EF63-4D1B-935A-D473EE621993}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProxy.Notification", "MyProxy.Notification\MyProxy.Notification.csproj", "{2AD016FF-9BE3-4419-A904-40F3BE81F92A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProxy.Notification", "MyProxy.Notification\MyProxy.Notification.csproj", "{2AD016FF-9BE3-4419-A904-40F3BE81F92A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProxy", "MyProxy\MyProxy.csproj", "{04E038F2-A032-4098-A870-5F95056DFADF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0391F8CD-CC80-4FDF-B9C7-EEFD5F7544EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0391F8CD-CC80-4FDF-B9C7-EEFD5F7544EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0391F8CD-CC80-4FDF-B9C7-EEFD5F7544EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0391F8CD-CC80-4FDF-B9C7-EEFD5F7544EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CCEB61AE-EF63-4D1B-935A-D473EE621993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CCEB61AE-EF63-4D1B-935A-D473EE621993}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCEB61AE-EF63-4D1B-935A-D473EE621993}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{2AD016FF-9BE3-4419-A904-40F3BE81F92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AD016FF-9BE3-4419-A904-40F3BE81F92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AD016FF-9BE3-4419-A904-40F3BE81F92A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E038F2-A032-4098-A870-5F95056DFADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E038F2-A032-4098-A870-5F95056DFADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E038F2-A032-4098-A870-5F95056DFADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E038F2-A032-4098-A870-5F95056DFADF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

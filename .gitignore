@@ -3,3 +3,9 @@
 ################################################################################
 
 /MyProxy/.vs/MyProxy/v16
+/MyProxy/MyProxy/obj
+/MyProxy/MyProxy/bin/Debug/netcoreapp3.1
+/MyProxy/MyProxy.Notification/obj
+/MyProxy/MyProxy.Notification/bin/Debug/netcoreapp3.1
+/MyProxy/MyProxy.Security/obj
+/MyProxy/MyProxy.Security/bin/Debug/netcoreapp3.1
