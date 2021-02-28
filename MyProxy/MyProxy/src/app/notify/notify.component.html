@@ -1,1 +1,5 @@
 <p>notify works!</p>
+
+<ul *ngFor="let alert of alerts">
+  <li>{{alert.type}}  {{alert.message}}</li>
+</ul>

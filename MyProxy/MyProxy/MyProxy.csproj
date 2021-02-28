@@ -3,9 +3,17 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="src\app\environments\environment.prod.ts" />
+    <None Remove="src\app\services\alerts.service.ts" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.ReverseProxy" Version="1.0.0-preview.9.*" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\app\services\alerts.service.ts" />
   </ItemGroup>
 </Project>
