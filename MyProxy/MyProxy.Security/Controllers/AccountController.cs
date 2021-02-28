@@ -9,7 +9,7 @@ namespace MyProxy.Security.Controllers
     public class AccountController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<Country> Get()
+        public IEnumerable<Country> GetCountries()
         {
             List<Country> countries = new List<Country>()
             {
@@ -20,10 +20,10 @@ namespace MyProxy.Security.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(LoginModel loginModel)
+        public IActionResult Login(LoginModel loginModel)
         {
             if (loginModel != null)
-                return Ok("Success");
+                return Ok(loginModel);
             else
                 return Ok("Failed");
         }
