@@ -20,7 +20,10 @@ namespace MyProxy.Notification
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+            services.AddCors(options =>
+                options.AddDefaultPolicy(builder =>
+                builder.AllowAnyOrigin()
+                .AllowAnyHeader().AllowAnyMethod()));
             services.AddSignalR();
             services.AddControllers();
         }
@@ -38,10 +41,7 @@ namespace MyProxy.Notification
             app.UseRouting();
 
             //app.UseAuthorization();
-            app.UseCors(x => x
-               .AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader());
+            app.UseCors();
 
             app.UseWebSockets(new WebSocketOptions
             {

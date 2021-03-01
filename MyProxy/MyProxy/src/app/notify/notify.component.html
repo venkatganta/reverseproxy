@@ -1,5 +1,18 @@
 <p>notify works!</p>
 
-<ul *ngFor="let alert of alerts">
-  <li>{{alert.type}}  {{alert.message}}</li>
-</ul>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr class="table-primary">
+        <th scope="col">Type</th>
+        <th scope="col">Message</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="signalList">
+      <tr *ngFor="let signal of signalList">
+        <td>{{ signal.type }}</td>
+        <td>{{ signal.message }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

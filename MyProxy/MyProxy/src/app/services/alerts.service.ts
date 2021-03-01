@@ -1,18 +1,32 @@
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { HttpErrorResponse } from "@angular/common/http";
+import { Injectable, EventEmitter } from "@angular/core";
+import { HubConnection, HubConnectionBuilder } from "@aspnet/signalr";
 import { throwError } from "rxjs";
-import { catchError } from "rxjs/operators";
 import { environment } from "../environments/environment";
+import { NotificationModel } from "../models/notification";
 
 @Injectable({ providedIn: 'root' })
 export class AlertService {
-  constructor(private http: HttpClient) {
+  private _hubConnection: HubConnection;
+  signalReceived = new EventEmitter<NotificationModel>();
 
+  constructor() {
+    this.buildConnection();
+    this.startConnection();
   }
-  getAlerts() {
-    return this.http.get(`${environment.apiUrl}/alert`).pipe(
-      catchError(this.handleError)
-    );
+
+  public buildConnection = () => {
+    this._hubConnection = new HubConnectionBuilder().withUrl(`${environment.apiUrl}/notify`).build();
+  }
+
+  public startConnection = () => {
+    this._hubConnection
+      .start()
+      .then(() => {
+        console.log('Connection started');
+        this.registerSignalEvents();
+      })
+      .catch(err => this.handleError(err))
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -26,6 +40,13 @@ export class AlertService {
     }
     console.error(errorMessage);
     return throwError(errorMessage);
+  }
+
+  public registerSignalEvents = () => {
+    this._hubConnection.on('ReceiveMessage', (data) => {
+      this.signalReceived.emit(data);
+      console.log(data);
+    });
   }
 
 }

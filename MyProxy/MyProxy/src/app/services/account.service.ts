@@ -12,7 +12,7 @@ export class AccountService {
 
   }
   getCountries() {
-    return this.http.get(`${environment.apiUrl}/account`).pipe(
+    return this.http.get(`${environment.apiUrl}/api/account`).pipe(
       catchError(this.handleError)
     );
   }
@@ -21,7 +21,7 @@ export class AccountService {
       "UserName": username, "Password": password, "CountryId": parseInt(countryId)
     };
     console.log(JSON.stringify(loginModel));
-    return this.http.post<User>(`${environment.apiUrl}/account`, loginModel)
+    return this.http.post<User>(`${environment.apiUrl}/api/account`, loginModel)
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('user', JSON.stringify(user));

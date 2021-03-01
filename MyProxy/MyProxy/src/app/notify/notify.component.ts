@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationModel } from '../models/notification';
 import { AlertService } from '../services/alerts.service';
 
 @Component({
@@ -7,16 +8,17 @@ import { AlertService } from '../services/alerts.service';
   styleUrls: ['./notify.component.css']
 })
 export class NotifyComponent implements OnInit {
-  alerts: {};
+  signalList: NotificationModel[] = [];
 
   constructor(
     private alertService: AlertService
   ) { }
 
-  ngOnInit(): void {
-    this.alertService.getAlerts().subscribe(
-      data => this.alerts = data
-    );
-  }
 
+  ngOnInit() {
+    this.alertService.signalReceived.subscribe((signal: NotificationModel) => {
+     // console.log(signal);
+      this.signalList.push(signal);
+    });
+  }
 }

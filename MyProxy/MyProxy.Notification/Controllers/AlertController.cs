@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using MyProxy.Notification.Helpers;
+using MyProxy.Notification.Hubs;
 using MyProxy.Notification.Models;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MyProxy.Notification.Controllers
 {
@@ -8,15 +11,24 @@ namespace MyProxy.Notification.Controllers
     [Route("api/[controller]")]
     public class AlertController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<NotificationModel> Get()
+        private readonly IHubContext<NotificationHub> _hub;
+
+        public AlertController(IHubContext<NotificationHub> hub)
         {
-            List<NotificationModel> notifications = new List<NotificationModel>()
+            _hub = hub;
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            NotificationModel model = new NotificationModel()
             {
-                new NotificationModel(){ Type="Success",Message="TEST Success" },
-                new NotificationModel(){ Type="Fail",Message="TEST Fail" }
+                Type = "alert",
+                Message = "Notification triggered"
             };
-            return notifications;
+            var timerManager = new TimerManager(async () => await _hub.Clients.All.SendAsync("ReceiveMessage", model));
+
+            return Ok(new { Message = "Request Completed" });
         }
     }
 }
