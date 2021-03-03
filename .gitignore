@@ -24,3 +24,5 @@ MyProxy/.vs/MyProxy/DesignTimeBuild/.dtbcache.v2
 /MyProxy/MyProxy/wwwroot/index.html
 /MyProxy/MyProxy/wwwroot/favicon.ico
 *.v2
+/MyProxy/MyProxy.Certificates/bin/Debug/net5.0
+/MyProxy/MyProxy.Certificates/obj

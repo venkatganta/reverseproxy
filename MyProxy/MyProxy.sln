@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProxy.Security", "MyProxy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProxy.Notification", "MyProxy.Notification\MyProxy.Notification.csproj", "{2AD016FF-9BE3-4419-A904-40F3BE81F92A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProxy", "MyProxy\MyProxy.csproj", "{316F23D9-CFBF-41CB-B428-D7E3609609F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyProxy", "MyProxy\MyProxy.csproj", "{316F23D9-CFBF-41CB-B428-D7E3609609F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyProxy.Certificates", "MyProxy.Certificates\MyProxy.Certificates.csproj", "{F92FEDB1-43DC-4E2C-81FD-904E631B5F8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{316F23D9-CFBF-41CB-B428-D7E3609609F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{316F23D9-CFBF-41CB-B428-D7E3609609F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{316F23D9-CFBF-41CB-B428-D7E3609609F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92FEDB1-43DC-4E2C-81FD-904E631B5F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92FEDB1-43DC-4E2C-81FD-904E631B5F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92FEDB1-43DC-4E2C-81FD-904E631B5F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92FEDB1-43DC-4E2C-81FD-904E631B5F8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
